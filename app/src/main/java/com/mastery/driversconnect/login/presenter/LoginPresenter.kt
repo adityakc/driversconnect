@@ -5,9 +5,10 @@ import com.mastery.driversconnect.login.model.entity.Credentials
 import com.mastery.driversconnect.login.model.service.ILoginService
 import com.mastery.driversconnect.login.view.ILoginView
 
-class LoginPresenter(private val service: ILoginService) : BasePresenter<ILoginView>() {
+class LoginPresenter(private val service: ILoginService) : BasePresenter<ILoginView>(),
+    ILoginPresenter {
 
-    fun attemptLogin(userName: String?, password: String?) {
+    override fun attemptLogin(userName: String?, password: String?) {
         if (!isValid(userName, password)) return
         val loginFlow = service.callLoginService(Credentials(userName, password))
         subscribe(loginFlow, { user ->
@@ -17,7 +18,7 @@ class LoginPresenter(private val service: ILoginService) : BasePresenter<ILoginV
         })
     }
 
-    private fun isValid(userName: String?, password: String?): Boolean {
+    override fun isValid(userName: String?, password: String?): Boolean {
         if (userName.isNullOrEmpty() || password.isNullOrEmpty()) {
             view?.onLoginFailure()
             return false

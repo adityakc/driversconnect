@@ -7,6 +7,7 @@ import com.mastery.driversconnect.base.view.BaseActivity
 import com.mastery.driversconnect.login.model.entity.User
 import com.mastery.driversconnect.login.model.service.ILoginService
 import com.mastery.driversconnect.login.model.service.LoginService
+import com.mastery.driversconnect.login.presenter.ILoginPresenter
 import com.mastery.driversconnect.login.presenter.LoginPresenter
 import kotlinx.android.synthetic.main.activity_login.*
 
@@ -15,7 +16,7 @@ import kotlinx.android.synthetic.main.activity_login.*
  */
 class LoginActivity : BaseActivity(), ILoginView {
 
-    lateinit var presenter: LoginPresenter
+    lateinit var presenter: ILoginPresenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

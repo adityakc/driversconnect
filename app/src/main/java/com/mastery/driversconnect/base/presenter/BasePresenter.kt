@@ -6,11 +6,11 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import java.net.UnknownHostException
 
-open class BasePresenter<View : IBaseView> {
+open class BasePresenter<View : IBaseView> : IBasePresenter<View> {
 
     var view: View? = null
 
-    fun attachView(view: View) {
+    override fun attachView(view: View) {
         this.view = view
     }
 
@@ -35,7 +35,7 @@ open class BasePresenter<View : IBaseView> {
         })
     }
 
-    fun detachView() {
+    override fun detachView() {
         view = null
     }
 
