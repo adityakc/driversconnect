@@ -20,15 +20,18 @@ open class BasePresenter<View : IBaseView> {
         onError: (t: Throwable) -> Unit
     ) {
         view?.onDataFetchStarted()
-        flowable.observeOn(AndroidSchedulers.mainThread()).subscribeOn(Schedulers.io()).subscribe({
+        flowable.observeOn(AndroidSchedulers.mainThread()).subscribeOn(Schedulers.io()).subscribe({ response ->
             view?.onSuccess()
+            onSuccess(response)
         }, { t ->
 
             if (t is UnknownHostException) {
                 view?.onConnectionError()
             } else {
                 view?.onError(t)
+                print(t)
             }
+            onError(t)
         })
     }
 
