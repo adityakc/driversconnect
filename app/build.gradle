@@ -17,17 +17,15 @@ android {
     }
 
     buildTypes {
-        mock {
-            buildConfigField "String", "HOST_URL", '"https://private-f699e3-masteryinterview.apiary-mock.com/"'
-        }
 
         debug {
-            buildConfigField "String", "HOST_URL", '"https://dev.mastery.com/"'
+            buildConfigField "String", "HOST_URL", '"https://private-f699e3-masteryinterview.apiary-mock.com/"'
         }
 
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "HOST_URL", '"https://mastery.com/"'
         }
 
 
