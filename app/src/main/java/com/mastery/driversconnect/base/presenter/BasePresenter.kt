@@ -6,7 +6,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import java.net.UnknownHostException
 
-class BasePresenter<View : IBaseView> {
+open class BasePresenter<View : IBaseView> {
 
     var view: View? = null
 
@@ -32,7 +32,7 @@ class BasePresenter<View : IBaseView> {
         })
     }
 
-    fun detachView(){
+    fun detachView() {
         view = null
     }
 
