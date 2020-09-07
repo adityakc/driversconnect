@@ -1,5 +1,6 @@
 package com.mastery.driversconnect.constants
 
-object StringConstants {
+object IntentKeys {
     const val KEY_FULL_NAME = "full_name"
+    const val KEY_DRIVER = "driver"
 }
