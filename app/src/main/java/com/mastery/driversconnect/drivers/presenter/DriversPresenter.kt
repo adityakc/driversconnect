@@ -11,8 +11,8 @@ class DriversPresenter(private val service: IDriversService) : BasePresenter<IDr
     IDriversPresenter {
 
     override fun getDrivers() {
-        subscribe(service.getDrivers(), {
-
+        subscribe(service.getDrivers(), { drivers ->
+            view?.onDriversFetched(drivers)
         }, {
 
         })

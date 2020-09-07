@@ -4,5 +4,5 @@ import com.mastery.driversconnect.base.view.IBaseView
 import com.mastery.driversconnect.drivers.model.entity.Driver
 
 interface IDriversView : IBaseView {
-    fun onDriversFetched(driver: List<Driver>)
+    fun onDriversFetched(drivers: List<Driver>)
 }
