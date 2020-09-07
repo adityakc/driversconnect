@@ -19,7 +19,7 @@ import kotlinx.android.synthetic.main.activity_login.*
  */
 class LoginActivity : BaseActivity(), ILoginView {
 
-    lateinit var presenter: ILoginPresenter
+    private lateinit var presenter: ILoginPresenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
