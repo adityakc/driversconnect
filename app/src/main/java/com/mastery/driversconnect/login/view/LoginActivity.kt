@@ -1,9 +1,11 @@
 package com.mastery.driversconnect.login.view
 
+import android.content.Intent
 import android.os.Bundle
 import com.google.android.material.snackbar.Snackbar
 import com.mastery.driversconnect.R
 import com.mastery.driversconnect.base.view.BaseActivity
+import com.mastery.driversconnect.drivers.view.DriversActivity
 import com.mastery.driversconnect.login.model.entity.User
 import com.mastery.driversconnect.login.model.service.ILoginService
 import com.mastery.driversconnect.login.model.service.LoginService
@@ -60,7 +62,10 @@ class LoginActivity : BaseActivity(), ILoginView {
 
     override fun onLoginSuccess(user: User) {
         //go to Drivers List Activity
-        snackIt("Login Success")
+        val fullName = "${user.first} ${user.last}"
+        val intent = Intent(this, DriversActivity::class.java)
+        intent.putExtra("KEY_FULL_NAME", fullName)
+        startActivity(intent)
 
     }
 
