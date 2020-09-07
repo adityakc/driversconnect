@@ -10,7 +10,7 @@ class LoginPresenter(private val service: ILoginService) : BasePresenter<ILoginV
 
     override fun attemptLogin(userName: String?, password: String?) {
         if (!isValid(userName, password)) return
-        val loginFlow = service.callLoginService(Credentials(userName, password))
+        val loginFlow = service.attemptLogin(Credentials(userName, password))
         subscribe(loginFlow, { user ->
             view?.onLoginSuccess(user)
         }, {

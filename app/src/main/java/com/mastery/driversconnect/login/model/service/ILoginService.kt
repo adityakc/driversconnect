@@ -5,5 +5,5 @@ import com.mastery.driversconnect.login.model.entity.User
 import io.reactivex.Flowable
 
 interface ILoginService {
-    fun callLoginService(credentials: Credentials): Flowable<User>
+    fun attemptLogin(credentials: Credentials): Flowable<User>
 }

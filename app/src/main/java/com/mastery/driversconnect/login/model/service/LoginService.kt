@@ -7,8 +7,8 @@ import io.reactivex.Flowable
 
 class LoginService : BaseService(), ILoginService {
 
-    override fun callLoginService(credentials: Credentials): Flowable<User> {
-        return createApiProxy(LoginApi::class.java).callLoginService(credentials)
+    override fun attemptLogin(credentials: Credentials): Flowable<User> {
+        return createApiProxy(LoginApi::class.java).attemptLogin(credentials)
     }
 
 }
