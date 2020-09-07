@@ -7,7 +7,6 @@ import androidx.appcompat.app.AppCompatActivity
 import com.mastery.driversconnect.R
 import com.mastery.driversconnect.constants.IntentKeys
 import com.mastery.driversconnect.drivers.model.entity.CurrentLocation
-import com.mastery.driversconnect.drivers.model.entity.Details
 import com.mastery.driversconnect.drivers.model.entity.Driver
 import kotlinx.android.synthetic.main.activity_driver_details.*
 import java.util.*

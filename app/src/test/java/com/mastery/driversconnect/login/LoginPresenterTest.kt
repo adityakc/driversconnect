@@ -3,10 +3,9 @@ package com.mastery.driversconnect.login
 import com.mastery.driversconnect.login.model.service.ILoginService
 import com.mastery.driversconnect.login.presenter.LoginPresenter
 import com.nhaarman.mockitokotlin2.mock
-import org.junit.Test
-
-import org.junit.Assert.*
+import org.junit.Assert.assertEquals
 import org.junit.Before
+import org.junit.Test
 
 /**
  * Example local unit test, which will execute on the development machine (host).
