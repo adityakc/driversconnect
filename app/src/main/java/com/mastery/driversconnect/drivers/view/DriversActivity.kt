@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerViewAccessibilityDelegate
 import com.mastery.driversconnect.R
 import com.mastery.driversconnect.base.view.BaseActivity
+import com.mastery.driversconnect.constants.StringConstants
 import com.mastery.driversconnect.drivers.model.entity.Driver
 import com.mastery.driversconnect.drivers.model.service.DriversService
 import com.mastery.driversconnect.drivers.model.service.IDriversService
@@ -47,6 +48,16 @@ class DriversActivity : BaseActivity(), IDriversView {
     }
 
     private fun setUpUI() {
+        setUpTitle()
+        setUpRecyclerView()
+    }
+
+    private fun setUpTitle() {
+        val fullName = intent.getStringExtra(StringConstants.KEY_FULL_NAME)
+        title = "${getString(R.string.welcome)} $fullName"
+    }
+
+    private fun setUpRecyclerView() {
         val layoutManager = LinearLayoutManager(this)
         recycler_view_drivers.adapter = driversRecyclerViewAdapter
         recycler_view_drivers.layoutManager = layoutManager

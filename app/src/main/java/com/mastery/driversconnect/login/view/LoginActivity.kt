@@ -5,6 +5,7 @@ import android.os.Bundle
 import com.google.android.material.snackbar.Snackbar
 import com.mastery.driversconnect.R
 import com.mastery.driversconnect.base.view.BaseActivity
+import com.mastery.driversconnect.constants.StringConstants
 import com.mastery.driversconnect.drivers.view.DriversActivity
 import com.mastery.driversconnect.login.model.entity.User
 import com.mastery.driversconnect.login.model.service.ILoginService
@@ -61,12 +62,11 @@ class LoginActivity : BaseActivity(), ILoginView {
     }
 
     override fun onLoginSuccess(user: User) {
-        //go to Drivers List Activity
+        //go to Drivers Activity
         val fullName = "${user.first} ${user.last}"
         val intent = Intent(this, DriversActivity::class.java)
-        intent.putExtra("KEY_FULL_NAME", fullName)
+        intent.putExtra(StringConstants.KEY_FULL_NAME, fullName)
         startActivity(intent)
-
     }
 
     override fun onDestroy() {
