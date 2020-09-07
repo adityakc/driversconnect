@@ -11,4 +11,5 @@
     <string name="dimension">Dimension</string>
     <string name="plate_number">Plate Number</string>
     <string name="current_location">Current Location</string>
+    <string name="trailer_information">Trailer Information</string>
 </resources>
