@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/activity_horizontal_margin"
+    tools:context=".drivers.view.DriverDetailsActivity">
+
+    <TextView
+        android:id="@+id/text_view_sub_title_trailer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Trailer"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_view_trailer_type_label"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/type"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_view_sub_title_trailer" />
+
+    <TextView
+        android:id="@+id/text_view_trailer_type_data"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_view_trailer_type_label"
+        tools:text="Gooseneck" />
+
+    <TextView
+        android:id="@+id/text_view_trailer_dim_label"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/dimension"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_view_trailer_type_data" />
+
+    <TextView
+        android:id="@+id/text_view_trailer_dim_data"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_view_trailer_dim_label"
+        tools:text="3X5X4" />
+
+    <TextView
+        android:id="@+id/text_view_plate_number_label"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/plate_number"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_view_trailer_dim_data" />
+
+
+    <TextView
+        android:id="@+id/text_view_plate_number_data"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_view_plate_number_label"
+        tools:text="VXRE" />
+
+    <TextView
+        android:id="@+id/text_view_current_location_label"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/current_location"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_view_plate_number_data" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
