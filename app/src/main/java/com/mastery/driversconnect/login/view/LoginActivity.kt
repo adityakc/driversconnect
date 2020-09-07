@@ -64,4 +64,11 @@ class LoginActivity : BaseActivity(), ILoginView {
 
     }
 
+    override fun onDestroy() {
+        presenter.detachView()
+        super.onDestroy()
+    }
+
+
+
 }
