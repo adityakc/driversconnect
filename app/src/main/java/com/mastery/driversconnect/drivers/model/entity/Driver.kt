@@ -1,7 +1,10 @@
 package com.mastery.driversconnect.drivers.model.entity
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
 
+@Parcelize
 data class Driver(@SerializedName("firstName")
                   val firstName: String = "",
                   @SerializedName("lastName")
@@ -9,4 +12,4 @@ data class Driver(@SerializedName("firstName")
                   @SerializedName("phoneNumber")
                   val phoneNumber: String = "",
                   @SerializedName("details")
-                  val details: Details)
+                  val details: Details): Parcelable

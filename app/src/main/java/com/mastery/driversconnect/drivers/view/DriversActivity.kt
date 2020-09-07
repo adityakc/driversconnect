@@ -1,13 +1,12 @@
 package com.mastery.driversconnect.drivers.view
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerViewAccessibilityDelegate
 import com.mastery.driversconnect.R
 import com.mastery.driversconnect.base.view.BaseActivity
-import com.mastery.driversconnect.constants.StringConstants
+import com.mastery.driversconnect.constants.IntentKeys
 import com.mastery.driversconnect.drivers.model.entity.Driver
 import com.mastery.driversconnect.drivers.model.service.DriversService
 import com.mastery.driversconnect.drivers.model.service.IDriversService
@@ -43,7 +42,9 @@ class DriversActivity : BaseActivity(), IDriversView {
     private val driversRecyclerViewAdapter = object : DriversRecyclerViewAdapter(drivers, R.layout.layout_driver) {
 
         override fun onDriverClick(driver: Driver) {
-            TODO("Not yet implemented")
+            val intent = Intent(this@DriversActivity, DriverDetailsActivity::class.java)
+            intent.putExtra(IntentKeys.KEY_DRIVER, driver)
+            startActivity(intent)
         }
     }
 
@@ -53,7 +54,7 @@ class DriversActivity : BaseActivity(), IDriversView {
     }
 
     private fun setUpTitle() {
-        val fullName = intent.getStringExtra(StringConstants.KEY_FULL_NAME)
+        val fullName = intent.getStringExtra(IntentKeys.KEY_FULL_NAME)
         title = "${getString(R.string.welcome)} $fullName"
     }
 
