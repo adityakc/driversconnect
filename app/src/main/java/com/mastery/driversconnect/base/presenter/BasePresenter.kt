@@ -20,19 +20,20 @@ open class BasePresenter<View : IBaseView> : IBasePresenter<View> {
         onError: (t: Throwable) -> Unit
     ) {
         view?.onDataFetchStarted()
-        flowable.observeOn(AndroidSchedulers.mainThread()).subscribeOn(Schedulers.io()).subscribe({ response ->
-            view?.onSuccess()
-            onSuccess(response)
-        }, { t ->
+        flowable.observeOn(AndroidSchedulers.mainThread()).subscribeOn(Schedulers.io())
+            .subscribe({ response ->
+                view?.onSuccess()
+                onSuccess(response)
+            }, { t ->
 
-            if (t is UnknownHostException) {
-                view?.onConnectionError()
-            } else {
-                view?.onError(t)
-                print(t)
-            }
-            onError(t)
-        })
+                if (t is UnknownHostException) {
+                    view?.onConnectionError()
+                } else {
+                    view?.onError(t)
+                    print(t)
+                }
+                onError(t)
+            })
     }
 
     override fun detachView() {
