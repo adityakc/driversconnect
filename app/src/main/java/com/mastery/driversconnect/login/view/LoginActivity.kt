@@ -54,7 +54,7 @@ class LoginActivity : BaseActivity(), ILoginView {
     }
 
     override fun onLoginFailure() {
-        snackIt("Please complete the required fields")
+        snackIt(getString(R.string.login_warning))
     }
 
     private fun snackIt(message: String) {
