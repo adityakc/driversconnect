@@ -12,4 +12,5 @@
     <string name="current_location">Current Location</string>
     <string name="trailer_information">Trailer Information</string>
     <string name="login_warning">Please complete the required fields</string>
+    <string name="check_internet">Please check internet</string>
 </resources>
