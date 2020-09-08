@@ -19,7 +19,7 @@
             android:label="@string/title_activity_drivers" />
         <activity
             android:name=".login.view.LoginActivity"
-            android:label="@string/title_activity_login"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:noHistory="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
