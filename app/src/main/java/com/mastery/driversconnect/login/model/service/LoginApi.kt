@@ -7,8 +7,6 @@ import retrofit2.http.Body
 import retrofit2.http.POST
 
 interface LoginApi {
-
     @POST("/login")
     fun attemptLogin(@Body credentials: Credentials): Flowable<User>
-
 }

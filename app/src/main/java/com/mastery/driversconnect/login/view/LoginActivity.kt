@@ -73,7 +73,4 @@ class LoginActivity : BaseActivity(), ILoginView {
         presenter.detachView()
         super.onDestroy()
     }
-
-
-
 }

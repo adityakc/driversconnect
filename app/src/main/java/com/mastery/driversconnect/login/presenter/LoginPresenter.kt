@@ -25,6 +25,4 @@ class LoginPresenter(private val service: ILoginService) : BasePresenter<ILoginV
         }
         return true
     }
-
-
 }

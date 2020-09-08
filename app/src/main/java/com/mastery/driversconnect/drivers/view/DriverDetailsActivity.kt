@@ -12,6 +12,7 @@ import kotlinx.android.synthetic.main.activity_driver_details.*
 import java.util.*
 
 class DriverDetailsActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_driver_details)
@@ -23,8 +24,6 @@ class DriverDetailsActivity : AppCompatActivity() {
         val driver = intent.getParcelableExtra<Driver>(IntentKeys.KEY_DRIVER)
         setUpTitle(driver)
         setUpDetails(driver)
-
-
     }
 
     private fun setUpDetails(driver: Driver?) {
@@ -50,6 +49,4 @@ class DriverDetailsActivity : AppCompatActivity() {
     private fun setUpTitle(driver: Driver?) {
         title = "${driver?.firstName} ${driver?.lastName}, ${driver?.phoneNumber}"
     }
-
-
 }

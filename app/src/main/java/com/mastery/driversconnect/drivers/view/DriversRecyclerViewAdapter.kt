@@ -19,18 +19,13 @@ abstract class DriversRecyclerViewAdapter(
 
     abstract fun onDriverClick(driver: Driver)
 
-
     override fun onBindViewHolder(holder: DriverViewHolder, position: Int) {
         val driver = drivers[position]
         holder.name.text = "${driver.firstName} ${driver.lastName}"
         holder.phone.text = driver.phoneNumber
         holder.mView.setOnClickListener {
-
             onDriverClick(driver)
-
         }
-
-
     }
 
     override fun getItemCount(): Int = drivers.size

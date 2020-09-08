@@ -28,5 +28,4 @@ abstract class BaseActivity : AppCompatActivity(), IBaseView {
     override fun onConnectionError() {
         progressBar?.visibility = View.GONE
     }
-
 }
